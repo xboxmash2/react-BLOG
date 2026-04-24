@@ -1,38 +1,27 @@
 import React from 'react'
-import {BrowserRouter,Routes,Route} from 'react-router-dom'
-import home  from "./components/home"
-import hollywood from './components/hollywood'
-import bollywood from './components/bollywood'
-import fitness from './components/fitness'
-import food from './components/food'
-import technology from './components/technology'
-import { Link } from 'react-router-dom'
-
-
-
+import {BrowserRouter, Routes,Route,Link} from 'react-router-dom'
+import Hollywood from './Components/Hollywood'
+import Home from './Components/Home'
+import Bollywood from './Components/Bollywood' 
+import Technology from './Components/Technology'
+import Fitness from './Components/Fitness'
+import Food from './Components/Food' 
+import './App.css'
+import Navbar from './Components/Navbar'
 
 const App = () => {
   return (
     <div>
       <BrowserRouter>
-        <Link to ="/home">Home</Link>
-        <Link to ="/hollywood">Hollywood</Link>
-        <Link to ="/bollywood">Bollywood</Link>
-        <Link to ="/fitness">Fitness</Link>
-        <Link to ="/food">Food</Link>
-        <Link to ="/technology">Technology</Link>
-        
-
-
-        <Routes>
-          <Route path='/' element={<home/>}/>
-          <Route path='/hollywood' element={<hollywood/>}/>
-          <Route path='/bollywood' element={<bollywood/>}/>
-          <Route path='/fitness' element={<fitness/>}/>
-          <Route path='/food' element={<food/>}/>
-          <Route path='/technology' element={<technology/>}/>
-        </Routes>
-      
+      <Navbar/>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/bollywood' element={<Bollywood/>}/>
+        <Route path='/hollywood' element={<Hollywood/>}/>
+        <Route path ='/technology' element={<Technology/>}/>
+        <Route path='/fitness' element={<Fitness/>}/>
+        <Route path='/food' element={<Food/>}/>
+      </Routes>
       </BrowserRouter>
     </div>
   )
